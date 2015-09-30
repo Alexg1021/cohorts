@@ -1,0 +1,16 @@
+<div data-ui-view>
+    <div>
+        <button class="btn btn-primary pull-right"
+                data-ng-click="projectsController.addProject()"> Add Project
+        </button>
+
+        <h1>PROJECTS</h1>
+
+        <project-table
+                data-remove="projectsController.remove"
+                data-projects="projectsController.projects">
+        </project-table>
+    </div>
+    <button class="btn btn-default" data-ui-sref="users">Users</button>
+</div>
+

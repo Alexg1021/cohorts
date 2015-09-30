@@ -1,0 +1,28 @@
+<div data-ui-view>
+    <h1>This is your Users page</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td><strong>First Name</strong></td>
+                <td><strong>Last Name</strong></td>
+                <td><strong>Email</strong></td>
+                <td><strong>Date Created</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="user in usersController">
+                <td>{{ user.first_name }}</td>
+                <td> {{user.last_name}} </td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at | niceDate: 'MM-DD-YYYY | h:mmA'}}</td>
+                <td><a style="cursor:pointer;" data-ng-click="remove(project._id)">EDIT</a></td>
+                <td><a style="cursor:pointer;" data-ng-click="remove(project._id)">DELETE</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <br /><a data-ui-sref="projects"><< Back</a>
+</div>

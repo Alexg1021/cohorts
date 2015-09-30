@@ -1,0 +1,8 @@
+<div data-ui-view>
+<h1>Project Details:</h1>
+    <h3>Title of Project - {{projectController.project.title}}</h3>
+    <h4>Led by - {{projectController.project.user.first_name}} {{projectController.project.user.last_name}} </h4>
+    <a data-ui-sref="projects.detail.edit({projectId: projectController.project._id})">EDIT</a> |
+    <a data-ng-click="projectController.del(projectController.project._id)">DELETE</a> </br></br>
+    <a data-ui-sref="projects"><< Back</a>
+</div>
