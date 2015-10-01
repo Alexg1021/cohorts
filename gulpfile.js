@@ -91,13 +91,13 @@ gulp.task('serve', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch([
-        'public/javascripts/*.js',
-        'public/javascripts/**/*.js'
-    ], ['js']);
+    watch(['./public/javascripts/*.js', './public/javascripts/**/*.js'], function () {
+        gulp.start('js');
+    });
 
-    gulp.watch('public/less/*.less', ['less']);
-    gulp.watch('public/javascripts/**/*.html', ['partials']);
+    watch(['./public/javascripts/*.html', './public/javascripts/**/*.html'], function () {
+        gulp.start('partials');
+    });
 });
 
 gulp.task('default', ['js-deps', 'partials', 'css-deps', 'js', 'less', 'watch', 'serve']);
